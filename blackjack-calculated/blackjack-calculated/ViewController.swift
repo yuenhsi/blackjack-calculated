@@ -8,18 +8,33 @@
 
 import UIKit
 
+enum PlayerID {
+    case player, house
+}
+
 class ViewController: UIViewController {
+    
+    var cards = [PlayerID: [Card]]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        createBoard(players: 2)
+        startGame()
     }
 
+
+    func createBoard(players: Int) {
+        // add imageViews to device
+    }
+    
+    func startGame() {
+        // gameplay
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
