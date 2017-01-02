@@ -36,11 +36,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         startGame(extraPlayers: 0)
     }
-
-
-    func updateBoard() {
-        // add imageViews to device
-    }
     
     func startGame(extraPlayers: Int) {
         numberOfPlayers = extraPlayers + 1
@@ -68,6 +63,11 @@ class ViewController: UIViewController {
         }
     }
     
+    func updateBoard() {
+        print("board updated")
+        // add imageViews based on numberOfPlayers, if they don't exist yet
+        
+        // populate imageViews depending on cards
     }
     
     override func didReceiveMemoryWarning() {
