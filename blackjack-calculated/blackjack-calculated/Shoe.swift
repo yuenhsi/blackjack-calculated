@@ -9,7 +9,7 @@
 import Foundation
 import GameplayKit
 
-class Shoe {
+struct Shoe {
     
     var cards = [Card]()
     
@@ -22,7 +22,7 @@ class Shoe {
         }
     }
     
-    func addDeck() {
+    mutating func addDeck() {
         for rank in Rank.allValues {
             for suit in Suit.allValues {
                 let card = Card.init(rank: rank, suit: suit)
@@ -31,11 +31,11 @@ class Shoe {
         }
     }
     
-    func shuffle() {
+    mutating func shuffle() {
         self.cards = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: cards) as! [Card]
     }
     
-    func draw() -> Card {
+    mutating func draw() -> Card {
         return cards.remove(at: 0)
     }
     
