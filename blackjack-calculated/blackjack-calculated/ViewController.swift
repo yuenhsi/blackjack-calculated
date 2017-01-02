@@ -69,23 +69,22 @@ class ViewController: UIViewController {
     func updateBoard() {
         print("board updated")
         // populate imageViews depending on cards
+        var cardImageView = UIImageView()
         for hand in participantHands {
+            switch hand.playerID! {
+            case .house:
+                cardImageView = dealerImageView
+            case .player:
+                cardImageView = playerImageView
+            case .others:
+                print("not implemented")
+                // get player based on tag
+            }
             for card in hand.cards {
                 let cardName = getCardName(card: card)
-                var cardImageView: UIImageView
-                switch hand.playerID {
-                case PlayerID.house:
-                    cardImageView = dealerImageView
-                case PlayerID.player:
-                    cardImageView = playerImageView
-                case PlayerID.others:
-                    print("not implemented")
-                    // get player based on tag
-                default:
-                    return
-                }
-                if cardImageView?.image == nil {
-                    playerImageView.image = UIImage(named: cardName)
+                if cardImageView.image == nil {
+                    print("here")
+                    cardImageView.image = UIImage(named: cardName)
                 } else {
                     
                 }
