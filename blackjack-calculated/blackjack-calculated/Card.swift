@@ -13,8 +13,8 @@ enum Rank: String {
     static let allValues = [two, three, four, five, six, seven, eight, nine, ten, jack, queen, king, ace]
 }
 
-enum Suit {
-    case diamonds, clubs, hearts, spades
+enum Suit: String {
+    case diamonds = "Diamonds", clubs = "Clubs", hearts = "Hearts", spades = "Spades"
     static let allValues = [diamonds, clubs, hearts, spades]
 }
 

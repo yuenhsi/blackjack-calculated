@@ -23,6 +23,9 @@ struct Hand {
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var dealerImageView: UIImageView!
+    @IBOutlet weak var playerImageView: UIImageView!
+    
     var numberOfPlayers: Int!
     var participantHands = [Hand]() {
         didSet {
@@ -65,13 +68,33 @@ class ViewController: UIViewController {
     
     func updateBoard() {
         print("board updated")
-        // add imageViews based on numberOfPlayers, if they don't exist yet
-            // let all cards height be 1/4 the width of device (as this game only allows landscape)
-            // card offset = 1/4 card width
-            // dealer: center horizontal - 1.5 * offset, 2/5 device height from top
-            // player: center horizontal, 1/5 device height from bottom
-        
         // populate imageViews depending on cards
+        for hand in participantHands {
+            for card in hand.cards {
+                let cardName = getCardName(card: card)
+                var cardImageView: UIImageView
+                switch hand.playerID {
+                case PlayerID.house:
+                    cardImageView = dealerImageView
+                case PlayerID.player:
+                    cardImageView = playerImageView
+                case PlayerID.others:
+                    print("not implemented")
+                    // get player based on tag
+                default:
+                    return
+                }
+                if cardImageView?.image == nil {
+                    playerImageView.image = UIImage(named: cardName)
+                } else {
+                    
+                }
+            }
+        }
+    }
+    
+    func getCardName(card: Card) -> String {
+        return "card\(card.Suit.rawValue)\(card.Rank.rawValue).png"
     }
     
     override func didReceiveMemoryWarning() {
