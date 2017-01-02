@@ -21,28 +21,168 @@
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardClubs10.png" translatesAutoresizingMaskIntoConstraints="NO" id="P2V-nX-dJn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nhcrtc.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="YqX-SC-fJu">
+                                <rect key="frame" x="-29" y="10" width="806" height="577"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardDiamonds3.png" translatesAutoresizingMaskIntoConstraints="NO" id="33b-Gx-aER">
+                                <rect key="frame" x="33" y="142" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardDiamonds3.png" translatesAutoresizingMaskIntoConstraints="NO" id="ASn-Rb-Kqv">
+                                <rect key="frame" x="53" y="122" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardDiamonds3.png" translatesAutoresizingMaskIntoConstraints="NO" id="dnH-Tx-5AT">
+                                <rect key="frame" x="73" y="102" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardDiamonds3.png" translatesAutoresizingMaskIntoConstraints="NO" id="K3h-d0-rgO">
+                                <rect key="frame" x="93" y="82" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardDiamonds3.png" translatesAutoresizingMaskIntoConstraints="NO" id="zkn-na-faG">
+                                <rect key="frame" x="113" y="62" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardClubs10.png" translatesAutoresizingMaskIntoConstraints="NO" id="oH5-TW-TFb">
+                                <rect key="frame" x="93" y="240" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardClubs10.png" translatesAutoresizingMaskIntoConstraints="NO" id="n5C-bZ-qZw">
+                                <rect key="frame" x="113" y="220" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardClubs10.png" translatesAutoresizingMaskIntoConstraints="NO" id="OWO-S8-Uth">
+                                <rect key="frame" x="133" y="200" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardClubs10.png" translatesAutoresizingMaskIntoConstraints="NO" id="en1-ya-ydz">
+                                <rect key="frame" x="153" y="180" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardClubs10.png" translatesAutoresizingMaskIntoConstraints="NO" id="MHZ-pc-EHA">
+                                <rect key="frame" x="173" y="160" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardHeartsJ.png" translatesAutoresizingMaskIntoConstraints="NO" id="iQ2-2h-63d">
+                                <rect key="frame" x="186" y="300" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardHeartsJ.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qfz-MN-sj7">
+                                <rect key="frame" x="206" y="280" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardHeartsJ.png" translatesAutoresizingMaskIntoConstraints="NO" id="arM-3h-aHw">
+                                <rect key="frame" x="226" y="260" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardHeartsJ.png" translatesAutoresizingMaskIntoConstraints="NO" id="1BR-2F-DQh">
+                                <rect key="frame" x="246" y="240" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardHeartsJ.png" translatesAutoresizingMaskIntoConstraints="NO" id="NfV-qs-6Ye">
+                                <rect key="frame" x="266" y="220" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardSpadesA.png" translatesAutoresizingMaskIntoConstraints="NO" id="P2V-nX-dJn">
                                 <rect key="frame" x="307" y="40" width="82" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardClubs10.png" translatesAutoresizingMaskIntoConstraints="NO" id="rE1-D9-cHL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardSpadesA.png" translatesAutoresizingMaskIntoConstraints="NO" id="rE1-D9-cHL">
                                 <rect key="frame" x="327" y="40" width="82" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardClubs10.png" translatesAutoresizingMaskIntoConstraints="NO" id="Akr-lX-lIi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardSpadesA.png" translatesAutoresizingMaskIntoConstraints="NO" id="Akr-lX-lIi">
                                 <rect key="frame" x="347" y="40" width="82" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardClubs10.png" translatesAutoresizingMaskIntoConstraints="NO" id="jRZ-W0-U5D">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardSpadesA.png" translatesAutoresizingMaskIntoConstraints="NO" id="jRZ-W0-U5D">
                                 <rect key="frame" x="367" y="40" width="82" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardClubs10.png" translatesAutoresizingMaskIntoConstraints="NO" id="wfc-Rc-AzB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardSpadesA.png" translatesAutoresizingMaskIntoConstraints="NO" id="wfc-Rc-AzB">
                                 <rect key="frame" x="387" y="40" width="82" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardClubs10.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gtz-a0-Du1">
-                                <rect key="frame" x="407" y="40" width="82" height="100"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardSpadesK.png" translatesAutoresizingMaskIntoConstraints="NO" id="mL9-At-Dhh">
+                                <rect key="frame" x="306" y="294" width="82" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardSpadesK.png" translatesAutoresizingMaskIntoConstraints="NO" id="pqq-Cx-lSs">
+                                <rect key="frame" x="326" y="274" width="82" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardSpadesK.png" translatesAutoresizingMaskIntoConstraints="NO" id="rpc-Kg-Eon">
+                                <rect key="frame" x="346" y="254" width="82" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardSpadesK.png" translatesAutoresizingMaskIntoConstraints="NO" id="dgg-aC-33n">
+                                <rect key="frame" x="366" y="234" width="82" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardSpadesK.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wys-Ww-hc3">
+                                <rect key="frame" x="386" y="214" width="82" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardHeartsJ.png" translatesAutoresizingMaskIntoConstraints="NO" id="yH0-v5-P9U">
+                                <rect key="frame" x="476" y="294" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardHeartsJ.png" translatesAutoresizingMaskIntoConstraints="NO" id="IZb-ID-dPL">
+                                <rect key="frame" x="486" y="274" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardHeartsJ.png" translatesAutoresizingMaskIntoConstraints="NO" id="fda-u5-mRr">
+                                <rect key="frame" x="496" y="254" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardHeartsJ.png" translatesAutoresizingMaskIntoConstraints="NO" id="6dH-vB-iLt">
+                                <rect key="frame" x="506" y="234" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardHeartsJ.png" translatesAutoresizingMaskIntoConstraints="NO" id="qRW-n8-F2P">
+                                <rect key="frame" x="516" y="214" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardClubs10.png" translatesAutoresizingMaskIntoConstraints="NO" id="3BK-Bh-d7W">
+                                <rect key="frame" x="569" y="240" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardClubs10.png" translatesAutoresizingMaskIntoConstraints="NO" id="5zJ-eY-JI7">
+                                <rect key="frame" x="579" y="220" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardClubs10.png" translatesAutoresizingMaskIntoConstraints="NO" id="DzH-Mz-omM">
+                                <rect key="frame" x="589" y="200" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardClubs10.png" translatesAutoresizingMaskIntoConstraints="NO" id="rdT-nl-Vyo">
+                                <rect key="frame" x="599" y="180" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardClubs10.png" translatesAutoresizingMaskIntoConstraints="NO" id="ucM-MG-hbt">
+                                <rect key="frame" x="609" y="160" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardDiamonds3.png" translatesAutoresizingMaskIntoConstraints="NO" id="fOK-3n-zhv">
+                                <rect key="frame" x="655" y="142" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardDiamonds3.png" translatesAutoresizingMaskIntoConstraints="NO" id="9xJ-K1-erA">
+                                <rect key="frame" x="665" y="122" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardDiamonds3.png" translatesAutoresizingMaskIntoConstraints="NO" id="g3F-f2-pZb">
+                                <rect key="frame" x="675" y="102" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardDiamonds3.png" translatesAutoresizingMaskIntoConstraints="NO" id="GH4-dL-yTY">
+                                <rect key="frame" x="685" y="82" width="41" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardDiamonds3.png" translatesAutoresizingMaskIntoConstraints="NO" id="GhM-fm-wop">
+                                <rect key="frame" x="695" y="62" width="41" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -57,5 +197,10 @@
     </scenes>
     <resources>
         <image name="cardClubs10.png" width="140" height="190"/>
+        <image name="cardDiamonds3.png" width="140" height="190"/>
+        <image name="cardHeartsJ.png" width="140" height="190"/>
+        <image name="cardSpadesA.png" width="140" height="190"/>
+        <image name="cardSpadesK.png" width="140" height="190"/>
+        <image name="nhcrtc.jpg" width="600" height="600"/>
     </resources>
 </document>
