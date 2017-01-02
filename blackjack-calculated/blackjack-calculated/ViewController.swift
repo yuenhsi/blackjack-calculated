@@ -9,27 +9,62 @@
 import UIKit
 
 enum PlayerID {
-    case player, house
+    case house, player, others
+}
+
+struct Hand {
+    var playerID: PlayerID!
+    var cards: [Card]!
 }
 
 class ViewController: UIViewController {
     
-    var cards = [PlayerID: [Card]]()
+    var participantHands = [Hand]()
+    var cards: Shoe!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        createBoard(players: 2)
-        startGame()
+        startGame(extraPlayers: 0)
     }
 
 
-    func createBoard(players: Int) {
+    func updateBoard() {
         // add imageViews to device
     }
     
-    func startGame() {
-        // gameplay
+    func startGame(extraPlayers: Int) {
+        pregame(extraPlayers: extraPlayers, numberOfDecks: 3)
+        updateBoard()
+    }
+    
+    func pregame(extraPlayers: Int, numberOfDecks: Int) {
+        self.cards = Shoe(numberOfDecks: numberOfDecks)!
+        cards.shuffle()
+        burn()
+        if extraPlayers > 0 {
+            for _ in 1 ... extraPlayers {
+                participantHands.append(Hand(playerID: PlayerID.others, cards: []))
+            }
+
+        }
+        participantHands.append(Hand(playerID: PlayerID.player, cards: []))
+        participantHands.append(Hand(playerID: PlayerID.house, cards: []))
+        
+        for _ in 1 ... 2 {
+            for participant in participantHands {
+                if participant.playerID != PlayerID.house {
+                    // deal face down
+                } else {
+                    // deal face up
+                }
+            }
+        }
+    }
+    
+    func burn() {
+        // animations
+        cards.draw()
     }
     
     override func didReceiveMemoryWarning() {
