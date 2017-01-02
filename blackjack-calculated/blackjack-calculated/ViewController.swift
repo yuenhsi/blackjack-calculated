@@ -66,6 +66,9 @@ class ViewController: UIViewController {
     func updateBoard() {
         print("board updated")
         // add imageViews based on numberOfPlayers, if they don't exist yet
+            // let all cards height be 1/4 the width of device (as this game only allows landscape)
+            // dealer: first card x: center horizontal - 1/4 card width, y: 2/5 height from top
+            //         successive card: 1/4 card width, same height
         
         // populate imageViews depending on cards
     }
