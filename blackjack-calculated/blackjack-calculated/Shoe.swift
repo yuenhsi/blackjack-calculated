@@ -1,5 +1,5 @@
 //
-//  Deck.swift
+//  Shoe.swift
 //  blackjack-calculated
 //
 //  Created by Yuen Hsi Chang on 1/1/17.
@@ -9,7 +9,7 @@
 import Foundation
 import GameplayKit
 
-class Decks {
+class Shoe {
     
     var cards = [Card]()
     
@@ -18,11 +18,15 @@ class Decks {
             return nil
         }
         for _ in 1 ... numberOfDecks {
-            for rank in Rank.allValues {
-                for suit in Suit.allValues {
-                    let card = Card.init(rank: rank, suit: suit)
-                    cards.append(card)
-                }
+            addDeck()
+        }
+    }
+    
+    func addDeck() {
+        for rank in Rank.allValues {
+            for suit in Suit.allValues {
+                let card = Card.init(rank: rank, suit: suit)
+                cards.append(card)
             }
         }
     }
