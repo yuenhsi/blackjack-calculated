@@ -19,8 +19,13 @@ struct Hand {
 
 class ViewController: UIViewController {
     
-    var participantHands = [Hand]()
-    var cards: Shoe!
+    var numberOfPlayers: Int!
+    var participantHands = [Hand]() {
+        didSet {
+            updateBoard()
+        }
+    }
+    var shoe: Shoe!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,13 +39,14 @@ class ViewController: UIViewController {
     }
     
     func startGame(extraPlayers: Int) {
+        numberOfPlayers = extraPlayers + 1
         pregame(extraPlayers: extraPlayers, numberOfDecks: 3)
         updateBoard()
     }
     
     func pregame(extraPlayers: Int, numberOfDecks: Int) {
-        self.cards = Shoe(numberOfDecks: numberOfDecks)!
-        cards.shuffle()
+        shoe = Shoe(numberOfDecks: numberOfDecks)!
+        shoe.shuffle()
         burn()
         if extraPlayers > 0 {
             for _ in 1 ... extraPlayers {
@@ -53,18 +59,14 @@ class ViewController: UIViewController {
         
         for _ in 1 ... 2 {
             for participant in participantHands {
-                if participant.playerID != PlayerID.house {
-                    // deal face down
-                } else {
-                    // deal face up
-                }
+                participant.cards.append(shoe.draw())
             }
         }
     }
     
     func burn() {
         // animations
-        cards.draw()
+        shoe.draw()
     }
     
     override func didReceiveMemoryWarning() {
