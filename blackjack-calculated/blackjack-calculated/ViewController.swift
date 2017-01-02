@@ -65,6 +65,18 @@ class ViewController: UIViewController {
     
     func updateBoard() {
         print("board updated")
+        let backOfCard = "cardBack_blue3.png"
+        let screenWidth = UIScreen.main.bounds.height
+        let screenHeight = UIScreen.main.bounds.width
+        let cardHeight = screenHeight / 4
+        let cardWidth = cardHeight / 3.5 * 2.5
+        let offset = cardWidth / 4
+        // create dealer's inital image view
+        let imageView = UIImageView(image: UIImage(named: backOfCard))
+        imageView.contentMode = .scaleAspectFit
+        view.addConstraint(NSLayoutConstraint.constraints(withVisualFormat: <#T##String#>, options: [], metrics: nil, views: ["dealerCard": imageView]))
+//        imageView.frame = CGRect(x: (screenWidth / 2) - (1.5 * offset), y: screenHeight / 2.5, width: 0, height: cardHeight)
+        view.addSubview(imageView)
         // add imageViews based on numberOfPlayers, if they don't exist yet
             // let all cards height be 1/4 the width of device (as this game only allows landscape)
             // card offset = 1/4 card width
