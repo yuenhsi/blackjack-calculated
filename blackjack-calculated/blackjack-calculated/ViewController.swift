@@ -15,6 +15,10 @@ enum PlayerID {
 struct Hand {
     var playerID: PlayerID!
     var cards: [Card]!
+    
+    mutating func addCard(card: Card) {
+        cards.append(card)
+    }
 }
 
 class ViewController: UIViewController {
@@ -58,8 +62,8 @@ class ViewController: UIViewController {
         participantHands.append(Hand(playerID: PlayerID.house, cards: []))
         
         for _ in 1 ... 2 {
-            for participant in participantHands {
-                participant.cards.append(shoe.draw())
+            for index in 0 ... 1 {
+                participantHands[index].addCard(card: shoe.draw())
             }
         }
     }
