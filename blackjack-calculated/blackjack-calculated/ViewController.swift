@@ -62,7 +62,7 @@ class ViewController: UIViewController {
         participantHands.append(Hand(playerID: PlayerID.house, cards: []))
         
         for _ in 1 ... 2 {
-            for index in 0 ... 1 {
+            for index in participantHands.indices {
                 participantHands[index].addCard(card: shoe.draw())
             }
         }
