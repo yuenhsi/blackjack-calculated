@@ -18,9 +18,9 @@ enum Suit {
     static let allValues = [diamonds, clubs, hearts, spades]
 }
 
-class Card {
-    final var Rank: Rank
-    final var Suit: Suit
+struct Card {
+    var Rank: Rank
+    var Suit: Suit
     
     init(rank: Rank, suit: Suit) {
         self.Rank = rank
