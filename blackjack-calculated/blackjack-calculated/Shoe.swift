@@ -39,6 +39,10 @@ struct Shoe {
         return cards.remove(at: 0)
     }
     
+    mutating func burn() {
+        cards.remove(at: 0)
+    }
+    
     func peek() -> Card {
         return cards[0]
     }

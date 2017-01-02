@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     func pregame(extraPlayers: Int, numberOfDecks: Int) {
         shoe = Shoe(numberOfDecks: numberOfDecks)!
         shoe.shuffle()
-        burn()
+        shoe.burn()
         if extraPlayers > 0 {
             for _ in 1 ... extraPlayers {
                 participantHands.append(Hand(playerID: PlayerID.others, cards: []))
@@ -68,9 +68,6 @@ class ViewController: UIViewController {
         }
     }
     
-    func burn() {
-        // animations
-        shoe.draw()
     }
     
     override func didReceiveMemoryWarning() {
