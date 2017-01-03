@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         numberOfPlayers = extraPlayers + 1
         playerTurn = true
         pregame(extraPlayers: extraPlayers, numberOfDecks: 3)
-        updateBoard()
+        deal()
     }
     
     func pregame(extraPlayers: Int, numberOfDecks: Int) {
@@ -55,13 +55,15 @@ class ViewController: UIViewController {
         shoe.burn()
         if extraPlayers > 0 {
             for _ in 1 ... extraPlayers {
-                participantHands.append(Hand(playerID: PlayerID.others, cards: []))
+                participantHands.append(Hand(playerID: PlayerID.others, cards: [], cardImage: UIImageView()))
             }
 
         }
-        participantHands.append(Hand(playerID: PlayerID.player, cards: []))
-        participantHands.append(Hand(playerID: PlayerID.house, cards: []))
-        
+        participantHands.append(Hand(playerID: PlayerID.player, cards: [], cardImage: UIImageView()))
+        participantHands.append(Hand(playerID: PlayerID.house, cards: [], cardImage: UIImageView()))
+    }
+    
+    func deal() {
         for _ in 1 ... 2 {
             for index in participantHands.indices {
                 participantHands[index].addCard(card: shoe.draw())
