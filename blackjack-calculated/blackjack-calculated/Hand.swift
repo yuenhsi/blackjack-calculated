@@ -33,16 +33,25 @@ class Hand {
         cards.append(card)
         switch playerID! {
         case .house:
-            let prevImage = cardImage[cardImage.count - 1]
-            let thisImage = UIImageView()
-            thisImage.frame = CGRect(x: prevImage.frame.origin.x + 20, y: prevImage.frame.origin.y, width: 80, height: 110)
-            cardImage.append(thisImage)
+            if cardImage.count == 0 {
+                cardImage.append(vc.dealerImageView)
+            } else {
+                let prevImage = cardImage[cardImage.count - 1]
+                let thisImage = UIImageView()
+                thisImage.frame = CGRect(x: prevImage.frame.origin.x + 20, y: prevImage.frame.origin.y, width: 80, height: 110)
+                cardImage.append(thisImage)
+            }
         case .player:
-            let prevImage = cardImage[cardImage.count - 1]
-            let thisImage = UIImageView()
-            thisImage.frame = CGRect(x: prevImage.frame.origin.x + 20, y: prevImage.frame.origin.y - 20, width: 80, height: 110)
-            cardImage.append(thisImage)
+            if cardImage.count == 0 {
+                cardImage.append(vc.playerImageView)
+            } else {
+                let prevImage = cardImage[cardImage.count - 1]
+                let thisImage = UIImageView()
+                thisImage.frame = CGRect(x: prevImage.frame.origin.x + 20, y: prevImage.frame.origin.y - 20, width: 80, height: 110)
+                cardImage.append(thisImage)
+            }
         case .others:
+            // get tag and assign imageVIew
             let prevImage = cardImage[cardImage.count - 1]
             let thisImage = UIImageView()
             thisImage.frame = CGRect(x: prevImage.frame.origin.x + 20, y: prevImage.frame.origin.y - 20, width: 40, height: 55)

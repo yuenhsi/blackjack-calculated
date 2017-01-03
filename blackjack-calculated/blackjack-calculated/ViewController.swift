@@ -54,9 +54,9 @@ class ViewController: UIViewController {
                     // the first card is linked to the one in the outlet
                     switch participantHands[index].playerID! {
                     case .house:
-                        participantHands[index].addCard(card: shoe.draw(), image: dealerImageView, vc: self)
+                        participantHands[index].addCard(card: shoe.draw(), vc: self)
                     case .player:
-                        participantHands[index].addCard(card: shoe.draw(), image: playerImageView, vc: self)
+                        participantHands[index].addCard(card: shoe.draw(), vc: self)
                     case .others:
                         print("not implemented")
                         // get player based on tag
