@@ -15,7 +15,7 @@ enum PlayerID {
 struct Hand {
     var playerID: PlayerID!
     var cards: [Card]!
-    var cardImage: UIImageView!
+    var cardImage: [UIImageView]!
     
     mutating func addCard(card: Card) {
         cards.append(card)
@@ -55,12 +55,12 @@ class ViewController: UIViewController {
         shoe.burn()
         if extraPlayers > 0 {
             for _ in 1 ... extraPlayers {
-                participantHands.append(Hand(playerID: PlayerID.others, cards: [], cardImage: UIImageView()))
+                participantHands.append(Hand(playerID: PlayerID.others, cards: [], cardImage: []))
             }
 
         }
-        participantHands.append(Hand(playerID: PlayerID.player, cards: [], cardImage: UIImageView()))
-        participantHands.append(Hand(playerID: PlayerID.house, cards: [], cardImage: UIImageView()))
+        participantHands.append(Hand(playerID: PlayerID.player, cards: [], cardImage: []))
+        participantHands.append(Hand(playerID: PlayerID.house, cards: [], cardImage: []))
     }
     
     func deal() {
@@ -72,7 +72,7 @@ class ViewController: UIViewController {
     }
     
     func updateBoard() {
-        print("board updated")
+        print("board updating")
         // populate imageViews depending on cards
         var cardImageView = UIImageView()
         for hand in participantHands {
@@ -88,7 +88,6 @@ class ViewController: UIViewController {
             for card in hand.cards {
                 let cardName = getCardName(card: card)
                 if cardImageView.image == nil {
-                    print("here")
                     cardImageView.image = UIImage(named: cardName)
                 } else {
                     
