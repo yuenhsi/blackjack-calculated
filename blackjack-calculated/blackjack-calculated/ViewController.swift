@@ -83,16 +83,15 @@ class ViewController: UIViewController {
         }
     }
     
-    func startDealerTurn() {
-        autoplay(hand: participantHands[participantHands.count])
+    func play(hand: Hand) {
     }
     
     func autoplay(hand: Hand) {
         
     }
     
-    func play(hand: Hand) {
-        
+    func startDealerTurn() {
+        autoplay(hand: participantHands[participantHands.count - 1]) // dealer's hand is always the last one in the array
     }
     
     func updateBoard() {
