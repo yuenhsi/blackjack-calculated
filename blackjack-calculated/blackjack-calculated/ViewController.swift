@@ -33,6 +33,8 @@ class ViewController: UIViewController {
         playerTurn = true
         pregame(extraPlayers: extraPlayers, numberOfDecks: 3)
         deal()
+        startPlayerTurn() // account for extra players
+        startDealerTurn()
     }
     
     func pregame(extraPlayers: Int, numberOfDecks: Int) {
@@ -68,6 +70,33 @@ class ViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func startPlayerTurn() {
+        for hand in participantHands {
+            // ensure that the player's turn is not over
+            if hand.playerID == PlayerID.others {
+                autoplay(hand: hand) // pass in hand and tag?
+            }
+            else if hand.playerID == PlayerID.player {
+                play(hand: hand)
+            }
+            else {
+                return
+            }
+        }
+    }
+    
+    func startDealerTurn() {
+        autoplay(hand: participantHands[participantHands.count])
+    }
+    
+    func autoplay(hand: Hand) {
+        
+    }
+    
+    func play(hand: Hand) {
+        
     }
     
     func updateBoard() {
