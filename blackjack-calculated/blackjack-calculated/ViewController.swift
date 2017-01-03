@@ -17,8 +17,9 @@ struct Hand {
     var cards: [Card]!
     var cardImage: [UIImageView]!
     
-    mutating func addCard(card: Card) {
+    mutating func addCard(card: Card, image: UIImageView) {
         cards.append(card)
+        cardImage.append(image)
     }
 }
 
@@ -64,9 +65,22 @@ class ViewController: UIViewController {
     }
     
     func deal() {
-        for _ in 1 ... 2 {
+        for cardNum in 1 ... 2 {
             for index in participantHands.indices {
-                participantHands[index].addCard(card: shoe.draw())
+                if cardNum == 1 {
+                    // the first card is linked to the one in the outlet
+                    switch participantHands[index].playerID! {
+                    case .house:
+                        participantHands[index].addCard(card: shoe.draw(), image: dealerImageView)
+                    case .player:
+                        participantHands[index].addCard(card: shoe.draw(), image: playerImageView)
+                    case .others:
+                        print("not implemented")
+                        // get player based on tag
+                    }
+                } else {
+                    participantHands[index].addCard(card: shoe.draw(), image: UIImageView())
+                }
             }
         }
     }
@@ -74,23 +88,11 @@ class ViewController: UIViewController {
     func updateBoard() {
         print("board updating")
         // populate imageViews depending on cards
-        var cardImageView = UIImageView()
         for hand in participantHands {
-            switch hand.playerID! {
-            case .house:
-                cardImageView = dealerImageView
-            case .player:
-                cardImageView = playerImageView
-            case .others:
-                print("not implemented")
-                // get player based on tag
-            }
-            for card in hand.cards {
+            for (index, card) in hand.cards.enumerated() {
                 let cardName = getCardName(card: card)
-                if cardImageView.image == nil {
-                    cardImageView.image = UIImage(named: cardName)
-                } else {
-                    
+                if hand.cardImage[index].image == nil {
+                    hand.cardImage[index].image = UIImage(named: cardName)
                 }
             }
         }
