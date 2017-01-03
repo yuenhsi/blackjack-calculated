@@ -18,10 +18,10 @@ class Hand {
     var cards: [Card]!
     var cardImage: [UIImageView]!
     
-    init(playerID: PlayerID, cards: [Card], cardImage: [UIImageView]) {
+    init(playerID: PlayerID) {
         self.playerID = playerID
-        self.cards = cards
-        self.cardImage = cardImage
+        self.cards = []
+        self.cardImage = []
     }
     
     func addCard(card: Card, image: UIImageView, vc: ViewController) {

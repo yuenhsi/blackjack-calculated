@@ -39,12 +39,12 @@ class ViewController: UIViewController {
         shoe.burn()
         if extraPlayers > 0 {
             for _ in 1 ... extraPlayers {
-                participantHands.append(Hand(playerID: PlayerID.others, cards: [], cardImage: []))
+                participantHands.append(Hand(playerID: PlayerID.others))
             }
 
         }
-        participantHands.append(Hand(playerID: PlayerID.player, cards: [], cardImage: []))
-        participantHands.append(Hand(playerID: PlayerID.house, cards: [], cardImage: []))
+        participantHands.append(Hand(playerID: PlayerID.player))
+        participantHands.append(Hand(playerID: PlayerID.house))
     }
     
     func deal() {
