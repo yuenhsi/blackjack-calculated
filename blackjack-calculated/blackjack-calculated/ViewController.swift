@@ -111,13 +111,22 @@ class ViewController: UIViewController {
         // populate imageViews
         for hand in participantHands {
             for (index, card) in hand.cards.enumerated() {
-                let cardName = getCardName(card: card)
+                var cardName = ""
+                if (playerTurn && index == 0 && hand.playerID == PlayerID.house) {
+                    cardName = getFaceDownCardName()
+                } else {
+                    cardName = getCardName(card: card)
+                }
                 if hand.cardImage[index].image == nil {
                     hand.cardImage[index].image = UIImage(named: cardName)
                     view.addSubview(hand.cardImage[index])
                 }
             }
         }
+    }
+    
+    func getFaceDownCardName() -> String {
+        return "cardBack_blue3.png"
     }
     
     func getCardName(card: Card) -> String {
