@@ -84,6 +84,24 @@ class ViewController: UIViewController {
     }
     
     func play(hand: Hand) {
+        var turnOver = false
+        while (!turnOver) {
+            if hand.getScore().min() > 21 {
+                turnOver = true
+                break
+            } else {
+                let gesture = "stand"
+//                let gesture = "hit"
+                if gesture == "stand" {
+                    turnOver = true
+                    break
+                }
+                if gesture == "hit" {
+                    hand.addCard(card: shoe.draw(), vc: self)
+                    break
+                }
+            }
+        }
     }
     
     func autoplay(hand: Hand) {
