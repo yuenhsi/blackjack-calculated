@@ -14,11 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerImageView: UIImageView!
     
     var numberOfPlayers: Int!
-    var participantHands = [Hand]() {
-        didSet {
-            updateBoard()
-        }
-    }
+    var participantHands = [Hand]()
     var shoe: Shoe!
     var playerTurn: Bool!
 
@@ -58,15 +54,15 @@ class ViewController: UIViewController {
                     // the first card is linked to the one in the outlet
                     switch participantHands[index].playerID! {
                     case .house:
-                        participantHands[index].addCard(card: shoe.draw(), image: dealerImageView)
+                        participantHands[index].addCard(card: shoe.draw(), image: dealerImageView, vc: self)
                     case .player:
-                        participantHands[index].addCard(card: shoe.draw(), image: playerImageView)
+                        participantHands[index].addCard(card: shoe.draw(), image: playerImageView, vc: self)
                     case .others:
                         print("not implemented")
                         // get player based on tag
                     }
                 } else {
-                    participantHands[index].addCard(card: shoe.draw())
+                    participantHands[index].addCard(card: shoe.draw(), vc: self)
                 }
             }
         }

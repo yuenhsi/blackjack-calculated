@@ -13,17 +13,23 @@ enum PlayerID {
     case house, player, others
 }
 
-struct Hand {
+class Hand {
     var playerID: PlayerID!
     var cards: [Card]!
     var cardImage: [UIImageView]!
     
-    mutating func addCard(card: Card, image: UIImageView) {
+    init(playerID: PlayerID, cards: [Card], cardImage: [UIImageView]) {
+        self.playerID = playerID
+        self.cards = cards
+        self.cardImage = cardImage
+    }
+    
+    func addCard(card: Card, image: UIImageView, vc: ViewController) {
         cards.append(card)
         cardImage.append(image)
     }
     
-    mutating func addCard(card: Card) {
+    func addCard(card: Card, vc: ViewController) {
         cards.append(card)
         switch playerID! {
         case .house:
@@ -42,6 +48,7 @@ struct Hand {
             thisImage.frame = CGRect(x: prevImage.frame.origin.x + 20, y: prevImage.frame.origin.y - 20, width: 40, height: 55)
             cardImage.append(thisImage)
         }
+        vc.updateBoard()
     }
     
     func getScore() -> [Int] {
