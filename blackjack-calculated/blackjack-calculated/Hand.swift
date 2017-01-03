@@ -24,11 +24,6 @@ class Hand {
         self.cardImage = []
     }
     
-    func addCard(card: Card, image: UIImageView, vc: ViewController) {
-        cards.append(card)
-        cardImage.append(image)
-    }
-    
     func addCard(card: Card, vc: ViewController) {
         cards.append(card)
         switch playerID! {
