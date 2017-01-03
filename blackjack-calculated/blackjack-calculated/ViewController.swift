@@ -24,10 +24,23 @@ struct Hand {
     
     mutating func addCard(card: Card) {
         cards.append(card)
-        let prevImage = cardImage[cardImage.count - 1]
-        let thisImage = UIImageView()
-        thisImage.frame = CGRect(x: prevImage.frame.origin.x + 20, y: prevImage.frame.origin.y + 20, width: 80, height: 110)
-        cardImage.append(thisImage)
+        switch playerID! {
+        case .house:
+            let prevImage = cardImage[cardImage.count - 1]
+            let thisImage = UIImageView()
+            thisImage.frame = CGRect(x: prevImage.frame.origin.x + 20, y: prevImage.frame.origin.y, width: 80, height: 110)
+            cardImage.append(thisImage)
+        case .player:
+            let prevImage = cardImage[cardImage.count - 1]
+            let thisImage = UIImageView()
+            thisImage.frame = CGRect(x: prevImage.frame.origin.x + 20, y: prevImage.frame.origin.y - 20, width: 80, height: 110)
+            cardImage.append(thisImage)
+        case .others:
+            let prevImage = cardImage[cardImage.count - 1]
+            let thisImage = UIImageView()
+            thisImage.frame = CGRect(x: prevImage.frame.origin.x + 20, y: prevImage.frame.origin.y - 20, width: 40, height: 55)
+            cardImage.append(thisImage)
+        }
     }
 }
 
