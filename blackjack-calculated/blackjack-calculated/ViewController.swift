@@ -87,7 +87,7 @@ class ViewController: UIViewController {
     
     func updateBoard() {
         print("board updating")
-        // populate imageViews depending on cards
+        // populate imageViews
         for hand in participantHands {
             for (index, card) in hand.cards.enumerated() {
                 let cardName = getCardName(card: card)
