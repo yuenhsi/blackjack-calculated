@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         }
     }
     var shoe: Shoe!
+    var playerTurn: Bool!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,7 @@ class ViewController: UIViewController {
     
     func startGame(extraPlayers: Int) {
         numberOfPlayers = extraPlayers + 1
+        playerTurn = true
         pregame(extraPlayers: extraPlayers, numberOfDecks: 3)
         updateBoard()
     }
