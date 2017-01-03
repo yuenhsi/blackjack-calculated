@@ -49,20 +49,20 @@ class ViewController: UIViewController {
     
     func deal() {
         for cardNum in 1 ... 2 {
-            for index in participantHands.indices {
+            for hand in participantHands {
                 if cardNum == 1 {
                     // the first card is linked to the one in the outlet
-                    switch participantHands[index].playerID! {
+                    switch hand.playerID! {
                     case .house:
-                        participantHands[index].addCard(card: shoe.draw(), vc: self)
+                        hand.addCard(card: shoe.draw(), vc: self)
                     case .player:
-                        participantHands[index].addCard(card: shoe.draw(), vc: self)
+                        hand.addCard(card: shoe.draw(), vc: self)
                     case .others:
                         print("not implemented")
                         // get player based on tag
                     }
                 } else {
-                    participantHands[index].addCard(card: shoe.draw(), vc: self)
+                    hand.addCard(card: shoe.draw(), vc: self)
                 }
             }
         }
