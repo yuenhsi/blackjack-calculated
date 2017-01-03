@@ -15,6 +15,7 @@ enum PlayerID {
 struct Hand {
     var playerID: PlayerID!
     var cards: [Card]!
+    var cardImage: UIImageView!
     
     mutating func addCard(card: Card) {
         cards.append(card)
