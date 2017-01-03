@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A2758021E1C45B3008477B1 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2758011E1C45B3008477B1 /* Hand.swift */; };
 		5A2D767B1E19BFD100FA9497 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2D767A1E19BFD100FA9497 /* AppDelegate.swift */; };
 		5A2D767D1E19BFD100FA9497 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2D767C1E19BFD100FA9497 /* ViewController.swift */; };
 		5A2D76801E19BFD100FA9497 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A2D767E1E19BFD100FA9497 /* Main.storyboard */; };
@@ -89,6 +90,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A2758011E1C45B3008477B1 /* Hand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		5A2D76771E19BFD100FA9497 /* blackjack-calculated.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "blackjack-calculated.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A2D767A1E19BFD100FA9497 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A2D767C1E19BFD100FA9497 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			children = (
 				5A2D767A1E19BFD100FA9497 /* AppDelegate.swift */,
 				5A2D767C1E19BFD100FA9497 /* ViewController.swift */,
+				5A2758011E1C45B3008477B1 /* Hand.swift */,
 				5A2D77311E19C5DB00FA9497 /* Card.swift */,
 				5A2D77331E19C97400FA9497 /* Shoe.swift */,
 				5A2D767E1E19BFD100FA9497 /* Main.storyboard */,
@@ -486,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A2D77341E19C97400FA9497 /* Shoe.swift in Sources */,
+				5A2758021E1C45B3008477B1 /* Hand.swift in Sources */,
 				5A2D767D1E19BFD100FA9497 /* ViewController.swift in Sources */,
 				5A2D77321E19C5DB00FA9497 /* Card.swift in Sources */,
 				5A2D767B1E19BFD100FA9497 /* AppDelegate.swift in Sources */,

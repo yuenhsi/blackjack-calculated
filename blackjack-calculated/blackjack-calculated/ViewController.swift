@@ -8,42 +8,6 @@
 
 import UIKit
 
-enum PlayerID {
-    case house, player, others
-}
-
-struct Hand {
-    var playerID: PlayerID!
-    var cards: [Card]!
-    var cardImage: [UIImageView]!
-    
-    mutating func addCard(card: Card, image: UIImageView) {
-        cards.append(card)
-        cardImage.append(image)
-    }
-    
-    mutating func addCard(card: Card) {
-        cards.append(card)
-        switch playerID! {
-        case .house:
-            let prevImage = cardImage[cardImage.count - 1]
-            let thisImage = UIImageView()
-            thisImage.frame = CGRect(x: prevImage.frame.origin.x + 20, y: prevImage.frame.origin.y, width: 80, height: 110)
-            cardImage.append(thisImage)
-        case .player:
-            let prevImage = cardImage[cardImage.count - 1]
-            let thisImage = UIImageView()
-            thisImage.frame = CGRect(x: prevImage.frame.origin.x + 20, y: prevImage.frame.origin.y - 20, width: 80, height: 110)
-            cardImage.append(thisImage)
-        case .others:
-            let prevImage = cardImage[cardImage.count - 1]
-            let thisImage = UIImageView()
-            thisImage.frame = CGRect(x: prevImage.frame.origin.x + 20, y: prevImage.frame.origin.y - 20, width: 40, height: 55)
-            cardImage.append(thisImage)
-        }
-    }
-}
-
 class ViewController: UIViewController {
     
     @IBOutlet weak var dealerImageView: UIImageView!
