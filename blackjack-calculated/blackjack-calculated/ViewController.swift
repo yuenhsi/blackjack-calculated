@@ -21,6 +21,14 @@ struct Hand {
         cards.append(card)
         cardImage.append(image)
     }
+    
+    mutating func addCard(card: Card) {
+        cards.append(card)
+        let prevImage = cardImage[cardImage.count - 1]
+        let thisImage = UIImageView()
+        thisImage.frame = CGRect(x: prevImage.frame.origin.x + 20, y: prevImage.frame.origin.y + 20, width: 80, height: 110)
+        cardImage.append(thisImage)
+    }
 }
 
 class ViewController: UIViewController {
@@ -79,7 +87,7 @@ class ViewController: UIViewController {
                         // get player based on tag
                     }
                 } else {
-                    participantHands[index].addCard(card: shoe.draw(), image: UIImageView())
+                    participantHands[index].addCard(card: shoe.draw())
                 }
             }
         }
@@ -93,6 +101,7 @@ class ViewController: UIViewController {
                 let cardName = getCardName(card: card)
                 if hand.cardImage[index].image == nil {
                     hand.cardImage[index].image = UIImage(named: cardName)
+                    view.addSubview(hand.cardImage[index])
                 }
             }
         }
