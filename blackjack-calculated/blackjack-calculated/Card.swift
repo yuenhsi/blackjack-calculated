@@ -26,4 +26,19 @@ struct Card {
         self.Rank = rank
         self.Suit = suit
     }
+    
+    func getScore() -> Int {
+        if let score = Int(Rank.rawValue) {
+            return score
+        } else {
+            switch Rank.rawValue {
+            case "J", "Q", "K":
+                return 10
+            case "A":
+                return -1
+            default:
+                return 0
+            }
+        }
+    }
 }

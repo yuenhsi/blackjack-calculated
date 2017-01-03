@@ -53,7 +53,12 @@ struct Hand {
                     scores[index] += cardScore
                 }
             } else {
-                
+                var newScores = [Int]()
+                for score in scores {
+                    newScores.append(score + 1)
+                    newScores.append(score + 11)
+                }
+                scores = newScores
             }
         }
         return scores
