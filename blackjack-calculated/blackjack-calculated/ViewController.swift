@@ -17,13 +17,14 @@ class ViewController: UIViewController {
     var participantHands = [Hand]()
     var shoe: Shoe!
     var playerTurn: Bool!
-    var touchesEffective: Bool!
+    var validateGestures: Bool!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.detected)))
-//        self.view.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(self.detectedagain)))
+        validateGestures = false
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.hit)))
+        self.view.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(self.stand)))
         startGame(extraPlayers: 0)
     }
     
@@ -32,8 +33,7 @@ class ViewController: UIViewController {
         playerTurn = true
         pregame(extraPlayers: extraPlayers, numberOfDecks: 3)
         deal()
-        startPlayerTurn() // account for extra players
-        endGame()
+        startOthersTurn() // account for extra players
     }
     
     func pregame(extraPlayers: Int, numberOfDecks: Int) {
@@ -58,41 +58,37 @@ class ViewController: UIViewController {
         }
     }
     
-    func startPlayerTurn() {
+    func startOthersTurn() {
         for hand in participantHands {
             if hand.playerID == PlayerID.others {
                 autoplay(hand: hand)
             }
             else if hand.playerID == PlayerID.player {
-                // link this method to play, then call startDealerTurn from there
+                validateGestures = true
             }
         }
     }
     
-    func play(hand: Hand) {
-        guard touchesEffective == true else {
+    func hit() {
+        guard validateGestures == true else {
             return
         }
-        var turnOver = false
-        while (!turnOver) {
-            if hand.getScore().min()! > 21 {
-                turnOver = true
-                touchesEffective = false
-                break
-            } else {
-                let gesture = "stand"
-//                let gesture = "hit"
-                if gesture == "stand" {
-                    turnOver = true
-                    touchesEffective = false
-                    break
-                }
-                if gesture == "hit" {
-                    hand.addCard(card: shoe.draw(), vc: self)
-                    break
-                }
-            }
+        // player's hand is always the second last item in hand array
+        let hand = participantHands[participantHands.count - 2]
+        hand.addCard(card: shoe.draw(), vc: self)
+        if hand.getScore().min()! > 21 {
+            validateGestures = false
+            startDealerTurn()
         }
+    }
+    
+    func stand() {
+        guard validateGestures == true else {
+            return
+        }
+        // player's hand is always the second last item in hand array
+        validateGestures = false
+        startDealerTurn()
     }
     
     func autoplay(hand: Hand) {
@@ -105,6 +101,7 @@ class ViewController: UIViewController {
         while hand.getScore().min()! < 17 {
             hand.addCard(card: shoe.draw(), vc: self)
         }
+        endGame()
     }
     
     func endGame() {
