@@ -98,7 +98,7 @@ class ViewController: UIViewController {
     }
     
     func startDealerTurn() {
-        showDealer()
+        showDealerHand()
         let hand = participantHands[participantHands.count - 1]
         while hand.getScore().min()! < 17 {
             hand.addCard(card: shoe.draw(), vc: self)
@@ -152,7 +152,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func showDealer() {
+    func showDealerHand() {
         let dealerHand = participantHands[participantHands.count - 1]
         dealerHand.cardImage[0].image = UIImage(named: getCardName(card: dealerHand.cards[0]))
     }
