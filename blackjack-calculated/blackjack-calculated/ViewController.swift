@@ -111,7 +111,12 @@ class ViewController: UIViewController {
     }
     
     func startDealerTurn() {
-        autoplay(hand: participantHands[participantHands.count - 1]) // dealer's hand is always the last one in the array
+        updateBoard() // show dealer hand
+        let hand = participantHands[participantHands.count - 1]
+        while hand.getScore().min()! < 17 {
+            hand.addCard(card: shoe.draw(), vc: self)
+        }
+    }
     
     func endGame() {
         var playerScore: Int!
@@ -146,7 +151,7 @@ class ViewController: UIViewController {
         // populate imageViews
         for hand in participantHands {
             for (index, card) in hand.cards.enumerated() {
-                var cardName = ""
+                var cardName: String
                 if (playerTurn && index == 0 && hand.playerID == PlayerID.house) {
                     cardName = getFaceDownCardName()
                 } else {
@@ -166,6 +171,16 @@ class ViewController: UIViewController {
     
     func getCardName(card: Card) -> String {
         return "card\(card.Suit.rawValue)\(card.Rank.rawValue).png"
+    }
+    
+    func maxValidScore(scores: [Int]) -> Int {
+        var max = -1
+        for score in scores {
+            if score <= 21 && score > max {
+                max = score
+            }
+        }
+        return max
     }
     
     override func didReceiveMemoryWarning() {
