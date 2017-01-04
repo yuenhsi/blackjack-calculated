@@ -111,7 +111,7 @@ class ViewController: UIViewController {
     }
     
     func startDealerTurn() {
-        updateBoard() // show dealer hand
+        showDealer()
         let hand = participantHands[participantHands.count - 1]
         while hand.getScore().min()! < 17 {
             hand.addCard(card: shoe.draw(), vc: self)
@@ -133,16 +133,16 @@ class ViewController: UIViewController {
         if playerScore == -1 {
             gameOverText = "You busted!"
         } else if playerScore == dealerScore {
-            gameOverText = "You're tied with the dealer."
+            gameOverText = "You're tied with the dealer; \(playerScore!) to \(dealerScore!)."
         } else if playerScore < dealerScore {
-            gameOverText = "You've lost to the dealer."
+            gameOverText = "You've lost to the dealer; \(playerScore!) to \(dealerScore!)."
         } else {
-            gameOverText = "You've beated the dealer!"
+            gameOverText = "You've beated the dealer; \(playerScore!) to \(dealerScore!)!"
         }
         
         let scoreLabel = UILabel()
         scoreLabel.text = gameOverText
-        scoreLabel.frame = CGRect(x: 150, y: 150, width: 40, height: 20)
+        scoreLabel.frame = CGRect(x: 150, y: 150, width: 400, height: 20)
         view.addSubview(scoreLabel)
     }
     
@@ -152,7 +152,7 @@ class ViewController: UIViewController {
         for hand in participantHands {
             for (index, card) in hand.cards.enumerated() {
                 var cardName: String
-                if (playerTurn && index == 0 && hand.playerID == PlayerID.house) {
+                if (index == 0 && hand.playerID == PlayerID.house) {
                     cardName = getFaceDownCardName()
                 } else {
                     cardName = getCardName(card: card)
@@ -163,6 +163,11 @@ class ViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func showDealer() {
+        let dealerHand = participantHands[participantHands.count - 1]
+        dealerHand.cardImage[0].image = UIImage(named: getCardName(card: dealerHand.cards[0]))
     }
     
     func getFaceDownCardName() -> String {
