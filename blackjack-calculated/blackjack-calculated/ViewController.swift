@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         startPlayerTurn() // account for extra players
         playerTurn = false
         startDealerTurn()
+        endGame()
     }
     
     func pregame(extraPlayers: Int, numberOfDecks: Int) {
@@ -106,11 +107,38 @@ class ViewController: UIViewController {
     }
     
     func autoplay(hand: Hand) {
-        
+        return
     }
     
     func startDealerTurn() {
         autoplay(hand: participantHands[participantHands.count - 1]) // dealer's hand is always the last one in the array
+    
+    func endGame() {
+        var playerScore: Int!
+        var dealerScore: Int!
+        var gameOverText: String
+        for hand in participantHands {
+            if hand.playerID == PlayerID.player {
+                playerScore = maxValidScore(scores: hand.getScore())
+            }
+            if hand.playerID == PlayerID.house {
+                dealerScore = maxValidScore(scores: hand.getScore())
+            }
+        }
+        if playerScore == -1 {
+            gameOverText = "You busted!"
+        } else if playerScore == dealerScore {
+            gameOverText = "You're tied with the dealer."
+        } else if playerScore < dealerScore {
+            gameOverText = "You've lost to the dealer."
+        } else {
+            gameOverText = "You've beated the dealer!"
+        }
+        
+        let scoreLabel = UILabel()
+        scoreLabel.text = gameOverText
+        scoreLabel.frame = CGRect(x: 150, y: 150, width: 40, height: 20)
+        view.addSubview(scoreLabel)
     }
     
     func updateBoard() {
