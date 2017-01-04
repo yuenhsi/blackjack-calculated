@@ -30,6 +30,7 @@ class ViewController: UIViewController {
         pregame(extraPlayers: extraPlayers, numberOfDecks: 3)
         deal()
         startPlayerTurn() // account for extra players
+        playerTurn = false
         startDealerTurn()
     }
     
@@ -86,7 +87,7 @@ class ViewController: UIViewController {
     func play(hand: Hand) {
         var turnOver = false
         while (!turnOver) {
-            if hand.getScore().min() > 21 {
+            if hand.getScore().min()! > 21 {
                 turnOver = true
                 break
             } else {
