@@ -17,10 +17,13 @@ class ViewController: UIViewController {
     var participantHands = [Hand]()
     var shoe: Shoe!
     var playerTurn: Bool!
+    var touchesEffective: Bool!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+//        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.detected)))
+//        self.view.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(self.detectedagain)))
         startGame(extraPlayers: 0)
     }
     
@@ -30,8 +33,6 @@ class ViewController: UIViewController {
         pregame(extraPlayers: extraPlayers, numberOfDecks: 3)
         deal()
         startPlayerTurn() // account for extra players
-        playerTurn = false
-        startDealerTurn()
         endGame()
     }
     
@@ -59,30 +60,31 @@ class ViewController: UIViewController {
     
     func startPlayerTurn() {
         for hand in participantHands {
-            // ensure that the player's turn is not over
             if hand.playerID == PlayerID.others {
-                autoplay(hand: hand) // pass in hand and tag?
+                autoplay(hand: hand)
             }
             else if hand.playerID == PlayerID.player {
-                play(hand: hand)
-            }
-            else {
-                return
+                // link this method to play, then call startDealerTurn from there
             }
         }
     }
     
     func play(hand: Hand) {
+        guard touchesEffective == true else {
+            return
+        }
         var turnOver = false
         while (!turnOver) {
             if hand.getScore().min()! > 21 {
                 turnOver = true
+                touchesEffective = false
                 break
             } else {
                 let gesture = "stand"
 //                let gesture = "hit"
                 if gesture == "stand" {
                     turnOver = true
+                    touchesEffective = false
                     break
                 }
                 if gesture == "hit" {
@@ -134,7 +136,6 @@ class ViewController: UIViewController {
     }
     
     func updateBoard() {
-        print("board updating")
         // populate imageViews
         for hand in participantHands {
             for (index, card) in hand.cards.enumerated() {
