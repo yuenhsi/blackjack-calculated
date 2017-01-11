@@ -145,6 +145,10 @@ class ViewController: UIViewController {
                 if hand.cardImage[index].image == nil {
                     hand.cardImage[index].image = UIImage(named: cardName)
                     view.addSubview(hand.cardImage[index])
+                    let imageView = hand.cardImage[index]
+                    UIView.animate(withDuration: 0.3, animations: {
+                        imageView.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+                    })
                 }
             }
         }
